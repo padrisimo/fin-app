@@ -59,5 +59,15 @@ angular.module('finApp.controllers', [])
     ]
 }])
 
-.controller('StockCtrl', function($scope, $stateParams) {
-});
+.controller('StockCtrl', ['$scope','$stateParams','$http','stockDataService',
+   function($scope, $stateParams, $http, stockDataService) {
+
+    $scope.ticker = $stateParams.stockTicker;
+
+    var promise = stockDataService.getPriceData($scope.ticker);
+
+    promise.then(function (data) {
+      console.log(data);
+    })
+
+}]);
