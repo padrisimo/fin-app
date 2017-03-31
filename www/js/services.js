@@ -27,7 +27,7 @@ angular.module('finApp.services', [])
 
 		$http.get(url)
 	      .success(function(json){
-	      	var jsonData = json.query.results.quote.PriceSales;
+	      	var jsonData = json.query.results.quote;
 	        deferred.resolve(jsonData);
 
 	      })
