@@ -63,11 +63,16 @@ angular.module('finApp.controllers', [])
    function($scope, $stateParams, $http, stockDataService) {
 
     $scope.ticker = $stateParams.stockTicker;
+    $scope.chartView = 1;
 
     $scope.$on("$ionicView.afterEnter", function() {
       getPriceData();
       getDetailsData();
     });
+
+    $scope.chartViewFunc = function (n) {
+      $scope.chartView = n;
+    };
 
 
      function getPriceData() {
@@ -85,7 +90,7 @@ angular.module('finApp.controllers', [])
 
        promise.then(function (data) {
          console.log(data);
-         $scope.stockDetailData = data;
+         $scope.stockDetailsData = data;
        })
      }
 
