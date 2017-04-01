@@ -1,5 +1,7 @@
 angular.module('finApp', [
   'ionic',
+  'nvd3',
+  'nvChart',
   'finApp.controllers',
   'finApp.services',
   'finApp.filters',
