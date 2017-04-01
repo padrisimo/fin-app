@@ -59,8 +59,10 @@ angular.module('finApp.controllers', [])
     ]
 }])
 
-.controller('StockCtrl', ['$scope','$stateParams','$http','stockDataService',
-   function($scope, $stateParams, $http, stockDataService) {
+.controller('StockCtrl', ['$scope','$stateParams','$http','stockDataService','dateService',
+   function($scope, $stateParams, $http, stockDataService, dateService) {
+
+    console.log(dateService.currentDate(), dateService.oneYearAgoDate());
 
     $scope.ticker = $stateParams.stockTicker;
     $scope.chartView = 1;
